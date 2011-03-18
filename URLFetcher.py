@@ -1,9 +1,25 @@
-import re, urllib
-x = "youtube" # keyword for selecting links
-mainURL = raw_input("Enter the URL you want to fetch: ") # ask for main URL
+#This program is free software: you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation, either version 3 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License
+#along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+import re
+import urllib
+x = 'youtube' # keyword for selecting links
+mainURL = raw_input('Enter the URL you want to fetch: ') # ask for main URL
 filename_without_txt = raw_input('Enter the desired filename: ')
-filename = filename_without_txt + ".txt"
-filename2 = filename_without_txt + "_edited.txt"
+filename = filename_without_txt + '.txt'
+filename2 = filename_without_txt + '_edited.txt'
 htmlSource = urllib.urlopen(mainURL).read(200000) # read up URL
 linksList = re.findall('<a href=(.*?)>',htmlSource) # look up all links in source
 
@@ -13,8 +29,8 @@ for link in linksList:
         savetotxt = str(link)
         f = open(filename, 'a')
         f.write(savetotxt + '\n' )
-        pass
-    pass
+        
+    
 
 o = open(filename2, 'a') #open for append
 for line in open(filename):
@@ -24,8 +40,9 @@ for line in open(filename):
     line = line.replace('&feature=av2n', '')
     line = line.replace('&ob=av2n', '')
     line = line.replace('v/', 'watch?v=')
+    line = line.replace('&tracker=False', '')
     o.write(line)
-    pass
+    
 
 o.close()
 
@@ -35,18 +52,16 @@ file2 = open(filename2)
 lines1 = 0
 for line in file1:
 # line is ignored here, but it contains each line of the file,
-# including the newline
+# including the new line
     lines1 += 1
-    pass
-print "File1 has " + str(lines1) + " lines in it."
+    
+print "File1 has ", lines1, " lines in it."
 
 lines2 = 0
 for line in file2:
     lines2 += 1
-    pass
-print "File2 has " + str(lines2) + " lines in it."
+    
+print "File2 has ", lines2, " lines in it."
 
 if lines2 == lines1:
     print "All set, captain!"
-    pass
-
