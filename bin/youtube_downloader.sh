@@ -14,6 +14,8 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
+sudo apt-get install youtube-dl
+
 echo 'Type the filename: '
 read filename
 suffix="_edited.txt"

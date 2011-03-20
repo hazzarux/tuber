@@ -13,5 +13,6 @@
 #You should have received a copy of the GNU General Public License
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+sudo apt-get install ffmpeg
 
 for i in *.flv; do ffmpeg -i "$i" "`basename "$i" .flv`.mp3"; done
