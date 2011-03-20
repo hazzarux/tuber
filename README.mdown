@@ -9,7 +9,7 @@ Afterwards I download the links with youtube-dl (with my bash script - [3]) !!no
 I'm also converting all .flv files to .mp3 for reducing the file size & for easy transfer on my iPod. But that is optional. [4]
 
 
-[1] http://www.ultratop.be/nl/weekchart.asp?cat=s
-[2] url_fetcher.py
-[3] youtube_downloader.sh
-[4] youtube_converter.sh
+[1] `http://www.ultr atop.be/nl/weekchart.asp?cat=s`
+[2] `url_fetcher.py`
+[3] `youtube_downloader.sh`
+[4] `youtube_converter.sh`
