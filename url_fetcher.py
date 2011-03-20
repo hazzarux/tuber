@@ -15,9 +15,12 @@
 
 import re
 import urllib
+import time
+
 x = 'youtube' # keyword for selecting links
 mainURL = raw_input('Enter the URL you want to fetch: ') # ask for main URL
 filename_without_txt = raw_input('Enter the desired filename: ')
+start = time.time()
 filename = filename_without_txt + '.txt'
 filename2 = filename_without_txt + '_edited.txt'
 htmlSource = urllib.urlopen(mainURL).read(200000) # read up URL
@@ -65,5 +68,7 @@ print "File2 has ", lines2, " lines in it."
 
 if lines2 == lines1:
     print "All set, captain!"
+
+print 'These files have been generated in %s seconds.' % (time.time() - start)
 
 # end of yigtuber
