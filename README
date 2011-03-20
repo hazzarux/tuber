@@ -1,8 +1,11 @@
 This a simple project, I maintained in my free time.
 It's actually pretty good if you want popular (& recent) music on your iPod.
-I use it to get all the YouTube links at [1]. (with Python)
-Afterwards I download the links with youtube-dl (with my bash script)
-I'm also converting all .flv files to .mp3 for reducing the file size & for easy transfer on my iPod. But that is optional.
+I use it to get all the YouTube links at [1]. (with Python - [2])
+Afterwards I download the links with youtube-dl (with my bash script - [3]) !!note that all videos are downloaded at LOWEST quality. i did this on purpose. it was my thought to download the lowest file size (i was going to convert the videos anyway! :) )
+I'm also converting all .flv files to .mp3 for reducing the file size & for easy transfer on my iPod. But that is optional. [4]
 
 
 [1] http://www.ultratop.be/nl/weekchart.asp?cat=s
+[2] url_fetcher.py
+[3] youtube_downloader.sh
+[4] youtube_converter.sh
