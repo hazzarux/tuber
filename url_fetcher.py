@@ -18,16 +18,16 @@ import urllib
 import time
 
 x = 'youtube' # keyword for selecting links
-mainURL = raw_input('Enter the URL you want to fetch: ') # ask for main URL
+main_url = raw_input('Enter the URL you want to fetch: ') # ask for main URL
 filename_without_txt = raw_input('Enter the desired filename: ')
 start = time.time()
 filename = filename_without_txt + '.txt'
 filename2 = filename_without_txt + '_edited.txt'
-htmlSource = urllib.urlopen(mainURL).read(200000) # read up URL
-linksList = re.findall('<a href=(.*?)>',htmlSource) # look up all links in source
+html_source = urllib.urlopen(main_url).read(200000) # read up URL
+linkslist = re.findall('<a href=(.*?)>',html_source) # look up all links in source
 
 
-for link in linksList:
+for link in linkslist:
     if x in link:
         savetotxt = str(link)
         f = open(filename, 'a')
