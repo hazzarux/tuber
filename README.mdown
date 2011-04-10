@@ -1,4 +1,6 @@
-Yigtuber // youtube-url fetcher+downloader+converter
+Yigtuber
+=========
+(youtube-url fetcher+downloader+converter)
 ====================================================
 About
 -----
