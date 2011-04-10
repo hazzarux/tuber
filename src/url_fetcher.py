@@ -12,12 +12,17 @@
 #along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
-
+####################################### IMPORTS
 import re
 import urllib
 import time
+####################################### IMPORTS
 
+####################################### VARIABLES
 x = 'youtube' # keyword for selecting links
+####################################### VARIABLES
+
+
 main_url = raw_input('Enter the URL you want to fetch: ') # ask for main URL
 filename_without_txt = raw_input('Enter the desired filename: ')
 start = time.time()
