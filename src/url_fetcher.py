@@ -63,13 +63,13 @@ for line in file1:
 # including the new line
     lines1 += 1
     
-print "File1 has ", lines1, " lines in it."
+print "File1 has", lines1, "lines in it."
 
 lines2 = 0
 for line in file2:
     lines2 += 1
     
-print "File2 has ", lines2, " lines in it."
+print "File2 has", lines2, "lines in it."
 
 if lines2 == lines1:
     print "All set, captain!"
