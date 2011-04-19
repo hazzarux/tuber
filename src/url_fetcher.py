@@ -26,8 +26,8 @@ x = 'youtube' # keyword for selecting links
 main_url = raw_input('Enter the URL you want to fetch: ') # ask for main URL
 filename_without_txt = raw_input('Enter the desired filename: ')
 start = time.time()
-filename = filename_without_txt + '.txt'
-filename2 = filename_without_txt + '_edited.txt'
+original_file = filename_without_txt + '.txt'
+edited_file = filename_without_txt + '_edited.txt'
 html_source = urllib.urlopen(main_url).read(200000) # read up URL
 linkslist = re.findall('<a href=(.*?)>',html_source) # look up all links in source
 
@@ -35,13 +35,13 @@ linkslist = re.findall('<a href=(.*?)>',html_source) # look up all links in sour
 for link in linkslist:
     if x in link:
         savetotxt = str(link)
-        f = open(filename, 'a')
+        f = open(original_file, 'a')
         f.write(savetotxt + '\n' )
         
     
 
-o = open(filename2, 'a') #open for append
-for line in open(filename):
+o = open(edited_file, 'a') #open for append
+for line in open(original_file):
     line = line.replace('"/showyoutube.asp?id=', '')
     line = line.replace('&hl=nl&fs=1&" target="syncframe" onclick="document.getElementById(\'sync\').style.left=250;document.getElementById(\'sync\').style.top=tempY-80;document.getElementById(\'sync\').style.display=\'block\';"', '')
     line = line.replace('&hl=nl&fs=1&" target="syncframe" onclick="document.getElementById(\'sync\').style.left=250;document.getElementById(\'sync\').style.top=tempY+20;document.getElementById(\'sync\').style.display=\'block\';"', '')
@@ -54,24 +54,24 @@ for line in open(filename):
 
 o.close()
 
-file1 = open(filename)
-file2 = open(filename2)
+o_file = open(original_file)
+e_file = open(edited_file)
 
-lines1 = 0
-for line in file1:
+o_lines = 0
+for line in o_file:
 # line is ignored here, but it contains each line of the file,
 # including the new line
-    lines1 += 1
+    o_lines += 1
     
-print "File1 has", lines1, "lines in it."
+print "File1 has", o_lines, "lines in it."
 
-lines2 = 0
-for line in file2:
-    lines2 += 1
+e_lines = 0
+for line in e_file:
+    e_lines += 1
     
-print "File2 has", lines2, "lines in it."
+print "File2 has", e_lines, "lines in it."
 
-if lines2 == lines1:
+if e_lines == o_lines:
     print "All set, captain!"
 
 print 'These files have been generated in %s seconds.' % (time.time() - start)
