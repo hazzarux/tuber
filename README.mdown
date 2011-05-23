@@ -1,4 +1,4 @@
-Yigtuber
+tuber
 =========
 (youtube-url fetcher+downloader+converter)
 ====================================================
